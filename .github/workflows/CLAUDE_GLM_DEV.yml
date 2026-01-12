@@ -10,10 +10,14 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
+  id-token: write
 
 jobs:
   CLAUDE:
     runs-on: ubuntu-latest
+
+    # ついでに bot 自己トリガーを防ぐ（推奨）
+    if: github.actor != 'claude[bot]'
 
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +26,6 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ZAI_API_KEY }}
         env:
-          # 変数を作らないなら、右側をそのままハードコードでもOK
           ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL || 'https://api.z.ai/api/anthropic' }}
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ZAI_API_KEY }}
 
