@@ -98,36 +98,16 @@
   <circle cx="100" cy="220" r="4" fill="#ff00ff" filter="url(#intense-glow)" opacity="0.8"/>
   <circle cx="1100" cy="220" r="4" fill="#00d4ff" filter="url(#intense-glow)" opacity="0.8"/>
 
-  <!-- Title with intense glow effect -->
+  <!-- Title with intense glow effect - larger font, no hyphens -->
   <g filter="url(#glow)">
-    <text x="600" y="135" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="url(#text-gradient)" text-anchor="middle" letter-spacing="1">claude-glm-actions-lab</text>
+    <text x="600" y="150" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="url(#text-gradient)" text-anchor="middle" letter-spacing="2">claude glm actions lab</text>
   </g>
 
   <!-- Subtitle with cyan color -->
-  <text x="600" y="185" font-family="Arial, sans-serif" font-size="20" fill="#00d4ff" text-anchor="middle" opacity="0.9">Claude Code GitHub Actions with GLM API</text>
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="22" fill="#00d4ff" text-anchor="middle" opacity="0.9">Claude Code GitHub Actions with GLM API</text>
 
   <!-- Decorative line under subtitle -->
-  <line x1="300" y1="200" x2="900" y2="200" stroke="url(#text-gradient)" stroke-width="2" opacity="0.5"/>
-
-  <!-- Neon badge pills with unique colors -->
-  <g filter="url(#glow)">
-    <!-- GitHub badge - green -->
-    <rect x="430" y="225" width="90" height="26" rx="13" fill="#0a3015" stroke="#00ffa3" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="475" y="242" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#00ffa3" text-anchor="middle">GitHub</text>
-
-    <!-- Actions badge - cyan -->
-    <rect x="535" y="225" width="90" height="26" rx="13" fill="#0a2530" stroke="#00d4ff" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="580" y="242" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#00d4ff" text-anchor="middle">Actions</text>
-
-    <!-- GLM badge - magenta -->
-    <rect x="640" y="225" width="90" height="26" rx="13" fill="#250a30" stroke="#ff00ff" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="685" y="242" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ff00ff" text-anchor="middle">GLM API</text>
-  </g>
-
-  <!-- Connection dots between badges -->
-  <circle cx="525" cy="238" r="3" fill="#00ffa3" opacity="0.6"/>
-  <circle cx="630" cy="238" r="3" fill="#00d4ff" opacity="0.6"/>
-  <circle cx="735" cy="238" r="3" fill="#ff00ff" opacity="0.6"/>
+  <line x1="300" y1="220" x2="900" y2="220" stroke="url(#text-gradient)" stroke-width="2" opacity="0.5"/>
 
   <!-- Bottom accent line -->
   <rect x="0" y="280" width="1200" height="2" fill="url(#text-gradient)" opacity="0.4"/>
