@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <!-- Fashion palette background gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#593A2E;stop-opacity:1">
+        <animate attributeName="stop-color" values="#593A2E;#4a3126;#593A2E;#3d261e;#593A2E" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#3d261e;stop-opacity:1">
+        <animate attributeName="stop-color" values="#3d261e;#593A2E;#3d261e;#4a3126;#3d261e" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#593A2E;stop-opacity:1">
+        <animate attributeName="stop-color" values="#593A2E;#3d261e;#593A2E;#4a3126;#593A2E" dur="12s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Fashion palette text gradient -->
+    <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9295A6;stop-opacity:1">
+        <animate attributeName="stop-color" values="#9295A6;#F2BC57;#F27329;#D9B4A7;#9295A6" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="33%" style="stop-color:#F2BC57;stop-opacity:1">
+        <animate attributeName="stop-color" values="#F2BC57;#F27329;#D9B4A7;#9295A6;#F2BC57" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="66%" style="stop-color:#F27329;stop-opacity:1">
+        <animate attributeName="stop-color" values="#F27329;#D9B4A7;#9295A6;#F2BC57;#F27329" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#D9B4A7;stop-opacity:1">
+        <animate attributeName="stop-color" values="#D9B4A7;#9295A6;#F2BC57;#F27329;#D9B4A7" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Diagonal stripe gradient -->
+    <linearGradient id="stripe-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9295A6;stop-opacity:0.08"/>
+      <stop offset="50%" style="stop-color:#F2BC57;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#F27329;stop-opacity:0.08"/>
+    </linearGradient>
+
+    <!-- Neon glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur">
+        <animate attributeName="stdDeviation" values="4;6;4" dur="3s" repeatCount="indefinite"/>
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Intense glow for accents -->
+    <filter id="intense-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur">
+        <animate attributeName="stdDeviation" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid pattern -->
+    <pattern id="cyber-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#F2BC57" stroke-width="0.5" stroke-opacity="0.1"/>
+    </pattern>
+
+    <!-- CSS Animations -->
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 0.8; r: 4; }
+        50% { opacity: 1; r: 6; }
+      }
+      @keyframes rotateHex {
+        0% { transform: rotate(0deg); transform-origin: center; }
+        100% { transform: rotate(360deg); transform-origin: center; }
+      }
+      @keyframes scanline {
+        0% { transform: translateY(-50px); opacity: 0; }
+        50% { opacity: 0.3; }
+        100% { transform: translateY(350px); opacity: 0; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes wave {
+        0%, 100% { transform: translateY(0); }
+        25% { transform: translateY(-3px); }
+        75% { transform: translateY(3px); }
+      }
+      @keyframes confetti-fall {
+        0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(320px) rotate(720deg); opacity: 0; }
+      }
+      @keyframes sparkle {
+        0%, 100% { opacity: 0; transform: scale(0); }
+        50% { opacity: 1; transform: scale(1.2); }
+      }
+      .orb { animation: pulse 2s ease-in-out infinite; }
+      .orb-delay-1 { animation-delay: 0.5s; }
+      .orb-delay-2 { animation-delay: 1s; }
+      .orb-delay-3 { animation-delay: 1.5s; }
+      .hexagon { animation: rotateHex 20s linear infinite; transform-origin: center; }
+      .scanline { animation: scanline 4s linear infinite; }
+      .main-text { animation: float 3s ease-in-out infinite; }
+      .release-char { animation: wave 2s ease-in-out infinite; }
+      .confetti { animation: confetti-fall 5s linear infinite; }
+      .sparkle { animation: sparkle 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#bg-gradient)"/>
+
+  <!-- Cyber grid overlay -->
+  <rect width="1200" height="300" fill="url(#cyber-grid)" opacity="0.5"/>
+
+  <!-- Animated diagonal stripes -->
+  <g opacity="0.3">
+    <rect x="0" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="100" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <rect x="200" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <rect x="300" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <rect x="400" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <rect x="500" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="2.5s"/>
+    </rect>
+    <rect x="600" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="3s"/>
+    </rect>
+    <rect x="700" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="3.5s"/>
+    </rect>
+    <rect x="800" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="4s"/>
+    </rect>
+    <rect x="900" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="4.5s"/>
+    </rect>
+    <rect x="1000" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="5s"/>
+    </rect>
+    <rect x="1100" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="5.5s"/>
+    </rect>
+    <rect x="1200" y="0" width="2" height="400" fill="url(#stripe-gradient)" transform="rotate(-30 600 150)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,0; 0,0" dur="10s" repeatCount="indefinite" begin="6s"/>
+    </rect>
+  </g>
+
+  <!-- Hexagonal decorations with rotation animation -->
+  <g stroke="url(#text-gradient)" stroke-width="1" fill="none" opacity="0.2">
+    <!-- Left hexagon group -->
+    <g class="hexagon" style="transform-origin: 110px 165px;">
+      <path d="M 80 110 L 110 95 L 140 110 L 140 140 L 110 155 L 80 140 Z"/>
+      <path d="M 60 150 L 90 135 L 120 150 L 120 180 L 90 195 L 60 180 Z"/>
+      <path d="M 80 190 L 110 175 L 140 190 L 140 220 L 110 235 L 80 220 Z"/>
+    </g>
+
+    <!-- Right hexagon group -->
+    <g class="hexagon" style="transform-origin: 1090px 165px; animation-direction: reverse;">
+      <path d="M 1060 110 L 1090 95 L 1120 110 L 1120 140 L 1090 155 L 1060 140 Z"/>
+      <path d="M 1080 150 L 1110 135 L 1140 150 L 1140 180 L 1110 195 L 1080 180 Z"/>
+      <path d="M 1060 190 L 1090 175 L 1120 190 L 1120 220 L 1090 235 L 1060 220 Z"/>
+    </g>
+  </g>
+
+  <!-- Glowing orbs with pulse animation -->
+  <circle cx="100" cy="80" r="4" fill="#9295A6" filter="url(#intense-glow)" class="orb"/>
+  <circle cx="1100" cy="80" r="4" fill="#D9B4A7" filter="url(#intense-glow)" class="orb orb-delay-1"/>
+  <circle cx="100" cy="220" r="4" fill="#F2BC57" filter="url(#intense-glow)" class="orb orb-delay-2"/>
+  <circle cx="1100" cy="220" r="4" fill="#F27329" filter="url(#intense-glow)" class="orb orb-delay-3"/>
+
+  <!-- Horizontal scanline effect -->
+  <rect class="scanline" x="0" y="0" width="1200" height="3" fill="url(#text-gradient)" opacity="0.3"/>
+
+  <!-- Confetti/Stars - Launch Celebration -->
+  <g class="confetti" style="animation-delay: 0s">
+    <rect x="200" y="-20" width="8" height="8" fill="#9295A6" transform="rotate(45)"/>
+  </g>
+  <g class="confetti" style="animation-delay: 0.5s">
+    <rect x="400" y="-20" width="6" height="6" fill="#F2BC57" transform="rotate(30)"/>
+  </g>
+  <g class="confetti" style="animation-delay: 1s">
+    <rect x="600" y="-20" width="7" height="7" fill="#F27329" transform="rotate(60)"/>
+  </g>
+  <g class="confetti" style="animation-delay: 1.5s">
+    <rect x="800" y="-20" width="6" height="6" fill="#D9B4A7" transform="rotate(20)"/>
+  </g>
+  <g class="confetti" style="animation-delay: 2s">
+    <rect x="1000" y="-20" width="8" height="8" fill="#9295A6" transform="rotate(50)"/>
+  </g>
+  <g class="confetti" style="animation-delay: 2.5s">
+    <rect x="300" y="-20" width="5" height="5" fill="#F27329" transform="rotate(40)"/>
+  </g>
+  <g class="confetti" style="animation-delay: 3s">
+    <rect x="700" y="-20" width="7" height="7" fill="#F2BC57" transform="rotate(55)"/>
+  </g>
+  <g class="confetti" style="animation-delay: 3.5s">
+    <rect x="900" y="-20" width="6" height="6" fill="#D9B4A7" transform="rotate(35)"/>
+  </g>
+
+  <!-- Sparkles Around Title -->
+  <g fill="#F2BC57" filter="url(#intense-glow)">
+    <polygon points="320,110 323,117 330,117 325,122 327,129 320,125 313,129 315,122 310,117 317,117" class="sparkle"/>
+    <polygon points="880,110 883,117 890,117 885,122 887,129 880,125 873,129 875,122 870,117 877,117" class="sparkle" style="animation-delay: 0.6s"/>
+    <polygon points="380,170 382,175 387,175 383,179 385,184 380,181 375,184 377,179 373,175 378,175" class="sparkle" style="animation-delay: 1.2s"/>
+    <polygon points="820,170 822,175 827,175 823,179 825,184 820,181 815,184 817,179 813,175 818,175" class="sparkle" style="animation-delay: 0.9s"/>
+  </g>
+
+  <!-- Main Text - Adjusted font size to prevent overflow -->
+  <g filter="url(#glow)">
+    <text x="600" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="bold" fill="url(#text-gradient)" text-anchor="middle" letter-spacing="1.5" class="main-text">CLAUDE GLM ACTIONS LAB</text>
+  </g>
+
+  <!-- Version Number - Prominent -->
+  <g filter="url(#glow)">
+    <text x="600" y="175" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="bold" fill="#F2BC57" text-anchor="middle" letter-spacing="2" class="main-text" style="animation-delay: 0.5s">
+      v1.0.0
+    </text>
+  </g>
+
+  <!-- Release Text (with Wave Animation) -->
+  <text x="600" y="205" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="url(#text-gradient)" letter-spacing="4">
+    <tspan class="release-char" style="animation-delay: 0s">I</tspan><tspan class="release-char" style="animation-delay: 0.08s">N</tspan><tspan class="release-char" style="animation-delay: 0.16s">A</tspan><tspan class="release-char" style="animation-delay: 0.24s">U</tspan><tspan class="release-char" style="animation-delay: 0.32s">G</tspan><tspan class="release-char" style="animation-delay: 0.4s">U</tspan><tspan class="release-char" style="animation-delay: 0.48s">R</tspan><tspan class="release-char" style="animation-delay: 0.56s">A</tspan><tspan class="release-char" style="animation-delay: 0.64s">L</tspan><tspan fill="#F2BC57"> </tspan><tspan class="release-char" style="animation-delay: 0.72s">R</tspan><tspan class="release-char" style="animation-delay: 0.8s">E</tspan><tspan class="release-char" style="animation-delay: 0.88s">L</tspan><tspan class="release-char" style="animation-delay: 0.96s">E</tspan><tspan class="release-char" style="animation-delay: 1.04s">A</tspan><tspan class="release-char" style="animation-delay: 1.12s">S</tspan><tspan class="release-char" style="animation-delay: 1.2s">E</tspan>
+  </text>
+
+  <!-- Decorative line -->
+  <line x1="350" y1="220" x2="850" y2="220" stroke="url(#text-gradient)" stroke-width="1.5" opacity="0.6">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Subtitle -->
+  <text x="600" y="245" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#F2BC57" text-anchor="middle" opacity="0.9">
+    Claude Code × GLM-4 × GitHub Actions
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Animated bottom accent line -->
+  <g>
+    <rect x="0" y="280" width="1200" height="2" fill="url(#text-gradient)" opacity="0.4">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <!-- Moving light particles on bottom line -->
+    <circle r="3" fill="#9295A6" filter="url(#intense-glow)">
+      <animateMotion dur="6s" repeatCount="indefinite" path="M 0,281 L 1200,281"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3" fill="#F2BC57" filter="url(#intense-glow)">
+      <animateMotion dur="8s" repeatCount="indefinite" path="M 0,281 L 1200,281" begin="2s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    <circle r="3" fill="#F27329" filter="url(#intense-glow)">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M 0,281 L 1200,281" begin="4s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite" begin="4s"/>
+    </circle>
+  </g>
+</svg>
