@@ -54,7 +54,7 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           trigger_phrase: "@cc"
-          allowedTools: '[]'
+          allowedTools: '["WebSearch", "mcp__exa__get_code_context_exa", "mcp__exa__web_search_exa", "crawling_exa", "deep_researcher_start", "deep_researcher_check"]'
 
           # ★ブランチ名を固定（タイムスタンプなし）
           branch_prefix: ""
