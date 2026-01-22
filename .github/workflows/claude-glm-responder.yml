@@ -50,6 +50,11 @@ jobs:
           else
             echo "name=claude-glm-dev-issue-${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
           fi
+          
+      - name: Install agent-browser
+        run: |
+          npm install -g agent-browser
+          agent-browser install
 
       - uses: anthropics/claude-code-action@v1
         with:
