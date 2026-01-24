@@ -61,7 +61,18 @@ jobs:
           trigger_phrase: "@cc"
           claude_args: |
             --mcp-config .mcp.json
-            --allowedTools mcp__exa__get_code_context_exa,mcp__exa__web_search_exa,mcp__exa__crawling_exa,mcp__exa__deep_researcher_start,mcp__exa__deep_researcher_check
+            --allowedTools
+              mcp__exa__get_code_context_exa,
+              mcp__exa__web_search_exa,
+              mcp__exa__crawling_exa,
+              mcp__exa__deep_researcher_start,
+              mcp__exa__deep_researcher_check,
+              Bash(git*),
+              Bash(ls),
+              Bash(cat),
+              Bash(mkdir -p sandbox/*),
+              Bash(curl -o sandbox/* https://*.ctfassets.net/*),
+              Bash(curl -o sandbox/* https://*.developers.io/*)
             
           # ★ブランチ名を固定（タイムスタンプなし）
           branch_prefix: ""
